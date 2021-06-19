@@ -6,7 +6,6 @@ metadata:
   labels:
     app.kubernetes.io/name: prometheus
     app.kubernetes.io/instance: prometheus-server
-
 rules:
 - apiGroups: [""]
   resources:

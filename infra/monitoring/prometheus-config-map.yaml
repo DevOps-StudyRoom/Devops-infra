@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: prometheus-server-conf
   labels:
-    name: prometheus-server-conf
+    app.kubernetes.io/instance: prometheus-server-conf
   namespace: monitoring
 data:
   prometheus.rules: |-
