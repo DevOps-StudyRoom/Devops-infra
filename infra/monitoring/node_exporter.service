@@ -4,8 +4,7 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-User=prometheus
-ExecStart=/home/ubuntu/Devops-infra/infra/monitoring/node_exporter
+ExecStart=/home/ubuntu/node_exporter/node_exporter
 
 [Install]
 WantedBy=default.target
