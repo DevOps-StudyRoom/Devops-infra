@@ -9,9 +9,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
-  tls:
-  - hosts: elasticsearch.hanium-devops.site
+  rules:
+  - host: elasticsearch.hanium-devops.site
     http:
+      paths:
       - path: /
         backend:
           serviceName: elasticsearch

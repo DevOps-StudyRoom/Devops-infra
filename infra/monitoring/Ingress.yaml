@@ -9,9 +9,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
-  tls:
-  - hosts: prometheus.hanium-devops.site
+  rules:
+  - host: prometheus.hanium-devops.site
     http:
+      paths:
       - path: /
         backend:
           serviceName: prometheus

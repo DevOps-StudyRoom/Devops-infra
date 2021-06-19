@@ -35,6 +35,6 @@ spec:
     port: 9100
     nodePort: 31672
     protocol: TCP
-  type: NodePort
+  type: ClusterIP
   selector:
     k8s-app: node-exporter
