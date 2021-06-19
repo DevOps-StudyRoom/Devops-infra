@@ -22,7 +22,8 @@ spec:
       - name: grafana-pod
         image: grafana/grafana:latest
         ports:
-          - containerPort: 3000
+          - name: grafana
+            containerPort: 3000
         resources:
           limits:
             memory: "1Gi"
