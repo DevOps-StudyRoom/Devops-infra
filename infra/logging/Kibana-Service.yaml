@@ -4,7 +4,7 @@ metadata:
   name: kibana-svc
   namespace: logging
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app.kubernetes.io/instance: kibana-pod
   ports:
