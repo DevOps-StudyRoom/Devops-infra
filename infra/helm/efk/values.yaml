@@ -34,12 +34,12 @@ elasticsearch:
   #  selector:
   #    matchLabels:
   #      app: efk
-  #persistence:
-  #  enabled: true
-  #  labels:
-  #    app: efk
-  #    enabled: false
-  #  annotations: {}
+  persistence:
+    enabled: false
+    labels:
+      app: efk
+      enabled: false
+    annotations: {}
 
 
 kibana:

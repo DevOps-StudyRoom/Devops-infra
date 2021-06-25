@@ -2215,19 +2215,19 @@ prometheus:
     ## Prometheus StorageSpec for persistent data
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/user-guides/storage.md
     ##
-    storageSpec: {}
-    ## Using PersistentVolumeClaim
-    ##
-    #  volumeClaimTemplate:
-    #    spec:
-    #      storageClassName: ""
-    #      accessModes: ["ReadWriteOnce"]
-    #      resources:
-    #        requests:
-    #          storage: 10Gi
-    #      selector:
-    #        matchLabels:
-    #          app: prometheus
+    storageSpec: 
+    # Using PersistentVolumeClaim
+    #
+      volumeClaimTemplate:
+        spec:
+          storageClassName: ""
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 10Gi
+          selector:
+            matchLabels:
+              app: prometheus
 
     ## Using tmpfs volume
     ##
