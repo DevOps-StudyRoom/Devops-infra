@@ -1,0 +1,77 @@
+elasticsearch:
+  replicas: 1
+  minimumMasterNodes: 1
+  clusterHealthCheckParams: 'wait_for_status=yellow&timeout=1s'
+
+  resources:
+    requests:
+      cpu: "300m"
+      memory: "3000Mi"
+    limits:
+      cpu: "300m"
+      memory: "3000Mi"
+
+  service:
+    type: NodePort
+
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    hosts:
+      - host: elasticsearch.hanium-devops.site
+        paths: 
+          - path: /
+    tls:
+    #  - secretName: chart-example-tls
+    #    hosts:
+    #      - chart-example.local
+          
+  volumeClaimTemplate:
+    accessModes: [ "ReadWriteOnce" ]
+    resources:
+      requests:
+        storage: 10Gi
+    selector:
+      matchLabels:
+        app: efk
+  persistence:
+    enabled: true
+    labels:
+      app: efk
+      enabled: false
+    annotations: {}
+
+
+kibana:
+  resources:
+    requests:
+      cpu: "300m"
+      memory: "3000Mi"
+    limits:
+      cpu: "300m"
+      memory: "3000Mi"
+
+  service:
+    type: NodePort
+
+  healthCheckPath: /app/kibana
+
+  #kibanaConfig:
+  #  kibana.yml: |
+  #    server.basePath: /
+  #    server.rewriteBasePath: true
+
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: kibana.hanium-devops.site
+        paths:
+          - path: /
+    tls:
+    #  - secretName: chart-example-tls
+    #    hosts:
+    #      - chart-example.local
