@@ -1,7 +1,6 @@
 elasticsearch:
   replicas: 1
   minimumMasterNodes: 1
-  clusterHealthCheckParams: 'wait_for_status=yellow&timeout=1s'
 
   resources:
     requests:
@@ -27,20 +26,20 @@ elasticsearch:
     #    hosts:
     #      - chart-example.local
           
-  volumeClaimTemplate:
-    accessModes: [ "ReadWriteOnce" ]
-    resources:
-      requests:
-        storage: 10Gi
-    selector:
-      matchLabels:
-        app: efk
-  persistence:
-    enabled: true
-    labels:
-      app: efk
-      enabled: false
-    annotations: {}
+  volumeClaimTemplate: {}
+  #  accessModes: [ "ReadWriteOnce" ]
+  #  resources:
+  #    requests:
+  #      storage: 10Gi
+  #  selector:
+  #    matchLabels:
+  #      app: efk
+  #persistence:
+  #  enabled: true
+  #  labels:
+  #    app: efk
+  #    enabled: false
+  #  annotations: {}
 
 
 kibana:
