@@ -1,0 +1,5 @@
+controller:
+  ingress:
+    enabeld: true
+    hostName: jenkins.hanium-devops.site
+    path: /
