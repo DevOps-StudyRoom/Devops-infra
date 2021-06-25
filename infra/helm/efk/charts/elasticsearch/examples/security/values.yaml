@@ -3,9 +3,9 @@ clusterName: "security"
 nodeGroup: "master"
 
 roles:
-  - master
-  - ingest
-  - data
+  master: "true"
+  ingest: "true"
+  data: "true"
 
 protocol: https
 

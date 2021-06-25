@@ -7,19 +7,13 @@ nodeGroup: "master"
 masterService: ""
 
 # Elasticsearch roles that will be applied to this nodeGroup
-# These will be set as environment variables. E.g. node.roles=master
-# https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html#node-roles
+# These will be set as environment variables. E.g. node.master=true
 roles:
-  - master
-  - data
-  - data_content
-  - data_hot
-  - data_warm
-  - data_cold
-  - ingest
-  - ml
-  - remote_cluster_client
-  - transform
+  master: "true"
+  ingest: "true"
+  data: "true"
+  remote_cluster_client: "true"
+# ml: "true" # ml is not availble with elasticsearch-oss
 
 replicas: 3
 minimumMasterNodes: 2
@@ -65,7 +59,7 @@ hostAliases: []
 #  - "bar.local"
 
 image: "docker.elastic.co/elasticsearch/elasticsearch"
-imageTag: "8.0.0-SNAPSHOT"
+imageTag: "7.10.1"
 imagePullPolicy: "IfNotPresent"
 
 podAnnotations: {}
@@ -74,7 +68,7 @@ podAnnotations: {}
 # additionals labels
 labels: {}
 
-esJavaOpts: "" # example: "-Xmx1g -Xms1g"
+esJavaOpts: "-Xmx1g -Xms1g"
 
 resources:
   requests:
@@ -85,6 +79,14 @@ resources:
     memory: "2Gi"
 
 initResources: {}
+  # limits:
+  #   cpu: "25m"
+  #   # memory: "128Mi"
+  # requests:
+  #   cpu: "25m"
+  #   memory: "128Mi"
+
+sidecarResources: {}
   # limits:
   #   cpu: "25m"
   #   # memory: "128Mi"
@@ -244,7 +246,7 @@ ingress:
   hosts:
     - host: chart-example.local
       paths:
-        - path: /app/kibana
+        - path: /
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -252,7 +254,9 @@ ingress:
 
 nameOverride: ""
 fullnameOverride: ""
-healthNameOverride: ""
+
+# https://github.com/elastic/helm-charts/issues/63
+masterTerminationFix: false
 
 lifecycle: {}
   # preStop:
