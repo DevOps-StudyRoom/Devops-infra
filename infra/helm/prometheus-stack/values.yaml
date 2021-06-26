@@ -2220,14 +2220,11 @@ prometheus:
     #
       volumeClaimTemplate:
         spec:
-          storageClassName: ""
+          storageClassName: nfs
           accessModes: ["ReadWriteOnce"]
           resources:
             requests:
               storage: 10Gi
-          selector:
-            matchLabels:
-              app: prometheus
 
     ## Using tmpfs volume
     ##

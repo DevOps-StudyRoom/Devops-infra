@@ -1,7 +1,7 @@
 elasticsearch:
   replicas: 1
   minimumMasterNodes: 1
-
+  clusterHealthCheckParams: 'wait_for_status=yellow&timeout=1s'
   resources:
     requests:
       cpu: "300m"
@@ -26,19 +26,20 @@ elasticsearch:
     #    hosts:
     #      - chart-example.local
           
-  volumeClaimTemplate: {}
-  #  accessModes: [ "ReadWriteOnce" ]
-  #  resources:
-  #    requests:
-  #      storage: 10Gi
-  #  selector:
-  #    matchLabels:
-  #      app: efk
+  volumeClaimTemplate:
+    storageClassName: nfs
+    accessModes: [ "ReadWriteOnce" ]
+    resources:
+      requests:
+        storage: 10Gi
+    selector:
+      matchLabels:
+        app: efk
   persistence:
-    enabled: false
+    enabled: true
     labels:
       app: efk
-      enabled: false
+      enabled: true
     annotations: {}
 
 

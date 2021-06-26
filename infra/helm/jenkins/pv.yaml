@@ -11,6 +11,7 @@ spec:
    storage: 30Gi
  nfs:
    path: /storage/efk
-   server: 10.0.1.37
+   server: 10.0.1.121
  persistentVolumeReclaimPolicy: Retain
  volumeMode: Filesystem
+ storageClassName: nfs

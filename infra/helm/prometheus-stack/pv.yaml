@@ -4,13 +4,16 @@ metadata:
   annotations:
     pv.kubernetes.io/provisioned-by: standard
   name: prometheus
+  labels:
+    app: prometheus
 spec:
+ persistentVolumeReclaimPolicy: Retain
+ volumeMode: Filesystem
  accessModes:
   - ReadWriteOnce
  capacity:
-   storage: 30Gi
+   storage: 10Gi
  nfs:
-   path: /storage/prometheus
-   server: 10.0.1.37
- persistentVolumeReclaimPolicy: Retain
- volumeMode: Filesystem
+   path: /storage/efk
+   server: 10.0.1.121
+ storageClassName: nfs
