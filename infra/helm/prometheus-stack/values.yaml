@@ -1100,12 +1100,12 @@ kubeEtcd:
     ## proxyUrl: URL of a proxy that should be used for scraping.
     ##
     proxyUrl: ""
-    scheme: http
+    scheme: https
     insecureSkipVerify: false
-    serverName: ""
-    caFile: ""
-    certFile: ""
-    keyFile: ""
+    serverName: localhost
+    caFile: /etc/prometheus/secrets/etcd-client-cert/etcd-ca
+    certFile: /etc/prometheus/secrets/etcd-client-cert/etcd-client
+    keyFile: /etc/prometheus/secrets/etcd-client-cert/etcd-client-key
 
     ## 	metric relabel configs to apply to samples before ingestion.
     ##
@@ -1779,7 +1779,8 @@ prometheus:
     # ingressClassName: nginx
 
     annotations:
-      kubernetes.io/ingress.class: nginx
+      #nginx.ingress.kubernetes.io/rewrite-target: /$2
+      #kubernetes.io/ingress.class: nginx
     labels: {}
 
     ## Hostnames.
@@ -1792,11 +1793,12 @@ prometheus:
     ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
     ##
     paths:
-      - /
+      path: /
+      pathType: ImplementationSpecific
     # - /
 
     ## For Kubernetes >= 1.18 you should specify the pathType (determines how Ingress paths should be matched)
-    ## See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#better-path-matching-with-path-types
+    ## See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#better-path-matching-witpathh--types
     # pathType: ImplementationSpecific
 
     ## TLS configuration for Prometheus Ingress
@@ -2007,7 +2009,7 @@ prometheus:
     ## reflected in the running Pods. To change the secrets mounted into the Prometheus Pods, the object must be deleted and recreated
     ## with the new list of secrets.
     ##
-    secrets: []
+    secrets: ['etcd-client-cert']
 
     ## ConfigMaps is a list of ConfigMaps in the same namespace as the Prometheus object, which shall be mounted into the Prometheus Pods.
     ## The ConfigMaps are mounted into /etc/prometheus/configmaps/.

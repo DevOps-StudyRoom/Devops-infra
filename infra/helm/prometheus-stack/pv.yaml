@@ -15,5 +15,5 @@ spec:
    storage: 10Gi
  nfs:
    path: /storage/efk
-   server: 10.0.1.121
+   server: 10.0.1.113
  storageClassName: nfs

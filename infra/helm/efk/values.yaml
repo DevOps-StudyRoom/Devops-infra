@@ -32,14 +32,11 @@ elasticsearch:
     resources:
       requests:
         storage: 10Gi
-    selector:
-      matchLabels:
-        app: efk
   persistence:
     enabled: true
     labels:
       app: efk
-      enabled: true
+      enabled: false
     annotations: {}
 
 
