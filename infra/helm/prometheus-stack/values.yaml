@@ -2222,7 +2222,7 @@ prometheus:
     #
       volumeClaimTemplate:
         spec:
-          storageClassName: nfs
+          storageClassName: nfs-prometheus
           accessModes: ["ReadWriteOnce"]
           resources:
             requests:

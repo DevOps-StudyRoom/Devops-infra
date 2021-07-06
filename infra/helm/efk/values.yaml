@@ -26,7 +26,7 @@ elasticsearch:
           - elasticsearch.hanium-devops.site
           
   volumeClaimTemplate:
-    storageClassName: nfs
+    storageClassName: nfs-efk
     accessModes: [ "ReadWriteOnce" ]
     resources:
       requests:
