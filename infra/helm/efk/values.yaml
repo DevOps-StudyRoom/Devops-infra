@@ -22,9 +22,9 @@ elasticsearch:
         paths: 
           - path: /
     tls:
-    #  - secretName: chart-example-tls
-    #    hosts:
-    #      - chart-example.local
+      - secretName: hanium-tls
+        hosts:
+          - elasticsearch.hanium-devops.site
           
   volumeClaimTemplate:
     storageClassName: nfs
@@ -69,6 +69,6 @@ kibana:
         paths:
           - path: /
     tls:
-    #  - secretName: chart-example-tls
-    #    hosts:
-    #      - chart-example.local
+      - secretName: hanium-tls
+        hosts:
+          - elasticsearch.hanium-devops.site

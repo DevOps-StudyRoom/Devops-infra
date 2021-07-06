@@ -16,6 +16,11 @@
 #               servicePort: 80
 #            path: /
 #            pathType: ImplementationSpecific
+#  tls:
+# - hosts:
+#    - argocd.hanium-devops.site
+#  secretName: hanium-tls
+
 
 #apiVersion: extensions/v1beta1
 #kind: Ingress
@@ -47,5 +52,9 @@
 #           servicePort: 80
 #         path: /
 #         pathType: ImplementationSpecific
+#  tls:
+# - hosts:
+#    - argocd.hanium-devops.site
+#  secretName: hanium-tls
 #status:
 #  loadBalancer: {}
