@@ -244,7 +244,7 @@ ingress:
   hosts:
     - host: chart-example.local
       paths:
-        - path: /app/kibana
+        - path: /
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
