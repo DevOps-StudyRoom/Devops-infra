@@ -10,8 +10,8 @@ spec:
  capacity:
    storage: 10Gi
  nfs:
-   path: /storage/efk
+   path: /storage/jenkins
    server: 10.0.1.69
  persistentVolumeReclaimPolicy: Retain
  volumeMode: Filesystem
- storageClassName: nfs-jenkins
+ storageClassName: nfs
