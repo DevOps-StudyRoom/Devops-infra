@@ -71,3 +71,20 @@ kibana:
       - secretName: hanium-tls
         hosts:
           - elasticsearch.hanium-devops.site
+          
+fluentd:
+  fileConfigs:
+    04_outputs.conf: |-
+      <label @OUTPUT>
+        <match **>
+          @type elasticsearch
+          host "elasticsearch-master"
+          port 9200
+          path ""
+          logstash_format true
+          influde_timestamp true
+          time_key timestamp
+          user elastic
+          password changeme
+        </match>
+      </label>
