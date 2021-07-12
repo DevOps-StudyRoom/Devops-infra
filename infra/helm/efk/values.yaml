@@ -71,7 +71,7 @@ kibana:
       - secretName: hanium-tls
         hosts:
           - elasticsearch.hanium-devops.site
-          
+
 fluentd:
   fileConfigs:
     04_outputs.conf: |-

@@ -4,9 +4,9 @@ dependencies:
   version: 3.1.1
 - name: prometheus-node-exporter
   repository: https://prometheus-community.github.io/helm-charts
-  version: 1.18.1
+  version: 1.18.2
 - name: grafana
   repository: https://grafana.github.io/helm-charts
-  version: 6.13.2
-digest: sha256:c5b964f90740cd34b38b44bb625dd4e409a699b425d2f7741aa44bffa259359c
-generated: "2021-06-18T16:31:14.426905076+03:00"
+  version: 6.13.6
+digest: sha256:49978f4d2f4f90bba25647dc43a14bdb50253583f8a5ec367247750708854cbe
+generated: "2021-07-06T13:00:57.664752802Z"

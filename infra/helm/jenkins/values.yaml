@@ -404,12 +404,11 @@ controller:
     # Set this path to jenkinsUriPrefix above or use annotations to rewrite path
     # path: "/jenkins"
     # configures the hostname e.g. jenkins.example.com
-    hostName:
-     - jenkins.hanium-devops.site
+    hostName: jenkins.hanium-devops.site
     tls:
-    # - secretName: jenkins.cluster.local
-    #   hosts:
-    #     - jenkins.cluster.local
+     - secretName: hanium-tls
+       hosts:
+         - jenkins.hanium-devops.site
 
   # often you want to have your controller all locked down and private
   # but you still want to get webhooks from your SCM
@@ -718,7 +717,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: nfs
+  #storageClass: nfs
   annotations: {}
   accessMode: "ReadWriteOnce"
   size: "8Gi"
