@@ -18,7 +18,7 @@ spec:
    server: 10.0.1.69
  storageClassName: nfs
 
- ---
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -39,7 +39,7 @@ spec:
    server: 10.0.1.69
  storageClassName: nfs
 
-  ---
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -60,7 +60,7 @@ spec:
    server: 10.0.1.69
  storageClassName: nfs
 
-  ---
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -81,7 +81,7 @@ spec:
    server: 10.0.1.69
  storageClassName: nfs
 
-  ---
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -102,7 +102,7 @@ spec:
    server: 10.0.1.69
  storageClassName: nfs
 
-  ---
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
