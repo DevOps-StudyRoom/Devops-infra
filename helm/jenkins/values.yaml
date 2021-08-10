@@ -550,7 +550,7 @@ agent:
   maxRequestsPerHostStr: "32"
   namespace:
   image: "adriagalin/jenkins-jnlp-slave"
-  tag: "4.6-1"
+  tag: "1.4"
   workingDir: "/home/jenkins"
   customJenkinsLabels: []
   # name of the secret to be used for image pulling
