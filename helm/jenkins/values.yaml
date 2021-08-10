@@ -584,8 +584,8 @@ agent:
   #   mountPath: /var/myapp/myemptydir
   #   memory: false
    - type: HostPath
-     hostPath: /var/run/docker.sock
-     mountPath: /var/run/docker.sock
+     hostPath: /var/run
+     mountPath: /var/run
   # - type: Nfs
   #   mountPath: /var/myapp/mynfs
   #   readOnly: false
