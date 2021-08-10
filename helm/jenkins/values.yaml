@@ -557,7 +557,7 @@ agent:
   imagePullSecretName:
   componentName: "jenkins-agent"
   websocket: false
-  privileged: false
+  privileged: true
   runAsUser:
   runAsGroup:
   resources:
@@ -568,7 +568,7 @@ agent:
       cpu: "512m"
       memory: "512Mi"
   # You may want to change this to true while testing a new image
-  alwaysPullImage: true
+  alwaysPullImage: false
   # Controls how agent pods are retained after the Jenkins build completes
   # Possible values: Always, Never, OnFailure
   podRetention: "Never"
