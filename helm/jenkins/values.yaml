@@ -549,7 +549,7 @@ agent:
   kubernetesReadTimeout: 15
   maxRequestsPerHostStr: "32"
   namespace:
-  image: "jenkins/inbound-agent"
+  image: "adriagalin/jenkins-jnlp-slave"
   tag: "4.6-1"
   workingDir: "/home/jenkins"
   customJenkinsLabels: []
@@ -584,8 +584,8 @@ agent:
   #   mountPath: /var/myapp/myemptydir
   #   memory: false
    - type: HostPath
-     hostPath: /var/run
-     mountPath: /var/run
+     hostPath: /var/run/docker.sock
+     mountPath: /var/run/docker.sock
   # - type: Nfs
   #   mountPath: /var/myapp/mynfs
   #   readOnly: false
