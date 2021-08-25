@@ -16,4 +16,4 @@ spec:
       paths:
         - backend:
             serviceName: web-service
-            servicePort: 8080
+            servicePort: 80
