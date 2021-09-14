@@ -7,8 +7,8 @@ spec:
   containers:
   - name: helloworld
     image: core.hanium-devops.site/devops/helloworld:latest
+    args: [/bin/sh, -c, 'i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done']
     ports:
       - containerPort: 8080
-    args: [/bin/sh, -c, 'i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done']
   imagePullSecrets:
   - name: harbor-repo
