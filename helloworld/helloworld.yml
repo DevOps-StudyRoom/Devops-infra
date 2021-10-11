@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
   - name: helloworld
-    image: core.hanium-devops.site/devops/helloworld:29
+    image: core.hanium-devops.site/devops/helloworld:21
 #    ports:
 #      - containerPort: 8080
   imagePullSecrets:
